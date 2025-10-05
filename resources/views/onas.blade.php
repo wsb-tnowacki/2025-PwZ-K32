@@ -12,6 +12,5 @@
             @endforeach
             </ol> 
         @endisset
-        <br>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti explicabo, beatae porro a iste labore odio magni sequi odit, perspiciatis veniam quaerat iusto eligendi inventore similique vero eius. Veniam, perspiciatis.</p>
+        </p>
 @endsection

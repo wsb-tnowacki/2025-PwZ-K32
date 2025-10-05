@@ -14,5 +14,7 @@ Route::get('/onas', function () {
         'Zadanie 2',
         'Zadanie 3'
     ];
-    return view('onas');
+    /* return view('onas',['zadania'=> $zadania]); */
+   /*  return view('onas',)->with('zadania',$zadania); */
+    return view('onas',compact('zadania'));
 });
