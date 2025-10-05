@@ -19,7 +19,7 @@ i później w tym katalogu <nazwa_nowego_katalogu> należy wykonać polecenie
 
 composer install
 
-aby zainsatlować brakujące pakiety w katalogu vendor
+aby zainstalować brakujące pakiety w katalogu vendor
 
 i jeszcze, żeby działała autoryzacja Breeze należy wykonać polecenie
 
