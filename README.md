@@ -6,6 +6,28 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+## Instrukcja do postępowania z repozytorium
+Do instalacji należy użyć polecenia wykonanego w katalogu np. C:\xampp\htdocs :
+
+git clone <adres_URL>
+
+lub
+
+git clone <adres_URL> <nazwa_nowego_katalogu>
+
+i później w tym katalogu <nazwa_nowego_katalogu> należy wykonać polecenie
+
+composer install
+
+aby zainsatlować brakujące pakiety w katalogu vendor
+
+i jeszcze, żeby działała autoryzacja Breeze należy wykonać polecenie
+
+npm install
+
+Do ściągnięcia nowszych wersji
+
+git pull
 
 ## About Laravel
 
