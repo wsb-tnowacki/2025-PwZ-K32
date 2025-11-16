@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OgolneController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::controller(OgolneController::class)->group(function (){
     Route::get('/kontakt', 'kontakt')->name('kontakt');
     Route::get('/onas', 'onas')->middleware('auth')->name('onas');
 });
+
+Route::resource('post', PostController::class);
+
 Route::get('/dashboard', function () {
     //return view('dashboard');
     return redirect(route('start'));
