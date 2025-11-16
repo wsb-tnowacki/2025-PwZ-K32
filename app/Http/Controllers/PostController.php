@@ -32,12 +32,13 @@ class PostController extends Controller
     {
         //
         /* @dump($request); */
-        $post= new Post();
+/*         $post= new Post();
         $post->tytul = request('tytul');
         $post->autor = $request['autor'];
         $post->email = request('email');
         $post->tresc = request('tresc');
-        $post->save();
+        $post->save(); */
+        Post::create($request->all());
         return redirect(route('post.index'));
     }
 
@@ -56,7 +57,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('post.edytuj');
+        return view('post.edytuj', compact('post'));
     }
 
     /**
@@ -65,7 +66,8 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
-        return 'update';
+        $post->update($request->all());
+       return redirect(route('post.index'));
     }
 
     /**
@@ -74,6 +76,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
-        return 'destroy';
+        $post->delete();
+       return redirect(route('post.index'));
     }
 }

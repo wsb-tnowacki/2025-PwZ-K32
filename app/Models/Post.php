@@ -10,4 +10,10 @@ class Post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
     protected $table = "posty";
+    protected $fillable = [
+        'tytul',
+        'autor',
+        'email',
+        'tresc'
+    ];
 }
