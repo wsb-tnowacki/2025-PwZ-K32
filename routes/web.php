@@ -18,7 +18,7 @@ Route::get('/onas', function () {
     /* return view('onas',['zadania'=> $zadania]); */
    /*  return view('onas',)->with('zadania',$zadania); */
     return view('onas',compact('zadania'));
-})->name('onas');
+})->middleware('auth')->name('onas');
 
 Route::get('/dashboard', function () {
     //return view('dashboard');

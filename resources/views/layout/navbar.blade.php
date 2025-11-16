@@ -6,8 +6,11 @@
     <li class="relative mx-1">
       <a class="block px-2 py-1 text-gray-800 hover:text-gray-600 transition-colors rounded" href="{{route('kontakt')}}">Kontakt</a>
     </li>
+@auth
     <li class="relative mx-1">
       <a class="block px-2 py-1 text-gray-800 hover:text-gray-600 transition-colors rounded" href="{{route('onas')}}">O nas</a>
-    </li>
+    </li>    
+@endauth
+
   </ul>
 </nav>
