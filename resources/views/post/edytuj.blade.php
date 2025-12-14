@@ -26,11 +26,11 @@
                 <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Powrót do listy</button>
                 </a>
             </span>
+            @auth
             <span class="mb-2">
                 <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Zmień posta</button>
-            </span>
-                
-                
+            </span>                
+            @endauth               
         </div>
 </form>
 @endisset

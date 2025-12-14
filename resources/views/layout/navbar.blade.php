@@ -25,9 +25,12 @@
         <li class="relative mx-1">
       <a class="block w-full px-3 py-2 text-gray-800 hover:bg-gray-50 " href="{{route('post.index')}}">Lista&nbsp;postów</a>
         </li>
+        @auth
         <li class="relative mx-1">
       <a class="block w-full px-3 py-2 text-gray-800 hover:bg-gray-50" href="{{route('post.create')}}">Dodaj&nbsp;posta</a>
-        </li>
+        </li>          
+        @endauth
+
       </ul>
     </li>
   </ul>

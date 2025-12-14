@@ -91,6 +91,20 @@
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg  rounded-t-lg lg:rounded-r-lg rounded-t-lg  lg:rounded-r-lg">
                     <h1 class="mb-1 font-medium">@yield('podtytul')</h1>
+                    @if(session()->has('message'))
+                         <div id="alert" class="bg-{{session()->get('color', 'green')}}-100 border border-{{session()->get('color', 'green')}}-400 text-{{session()->get('color', 'green')}}-700 relative px-4 py-3 rounded mb-4 mt-3" role="alert">
+                        <strong class="font-bold">{{ session()->get('message') }}</strong>
+                        <button type="button" class="absolute top-2 right-2 text-xl font-semibold leading-none text-{{session()->get('color', 'green')}}-700 hover:text-{{session()->get('color', 'green')}}-900" onclick="this.parentElement.remove()" aria-label="Close">&times;</button>
+                        </div>
+                        <script>
+                            setTimeout(() => {
+                            const alert = document.getElementById('alert');
+                            if (alert) {
+                            alert.remove();
+                            }
+                            }, 3000); // 3000 ms = 3 sekundy
+                        </script>
+                    @endif
                     <p>@yield('tresc')</p>
                 </div>
               

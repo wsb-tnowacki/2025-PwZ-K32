@@ -25,8 +25,9 @@
         </div>
         <div class="flex items-center gap-x-2">
             <a href="{{route('post.index')}}" class="mb-2">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Powrót do listy</button>
+                <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Powrót do listy</button>
             </a>
+            @auth
             <a href="{{route('post.edit', $post->id)}}" class="mb-2">
                 <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Edytuj posta</button>
             </a>
@@ -34,7 +35,9 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Usuń posta</button>
-            </form>
+            </form>                
+            @endauth
+
         </div>
         
 </div>

@@ -8,6 +8,11 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+    safelist: [
+        {
+            pattern: /(bg|text|border)-(red|green|yellow|blue)-(100|400|700|900)/,
+        },
+    ],
 
     theme: {
         extend: {

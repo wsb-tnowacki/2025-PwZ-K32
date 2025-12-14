@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -38,8 +43,14 @@ class PostController extends Controller
         $post->email = request('email');
         $post->tresc = request('tresc');
         $post->save(); */
+        $request->validate([
+            'tytul' => 'required|min:2|max:200',
+            'autor' => 'required|min:3|max:100',
+            'email' => 'required|email:dns,rfc|max:200',
+            'tresc' => 'required|min:5'
+        ]);
         Post::create($request->all());
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message','Dodano poprawnie post');
     }
 
     /**
@@ -67,7 +78,7 @@ class PostController extends Controller
     {
         //
         $post->update($request->all());
-       return redirect(route('post.index'));
+       return redirect(route('post.index'))->with('message','Zmieniono poprawnie post');
     }
 
     /**
@@ -77,6 +88,6 @@ class PostController extends Controller
     {
         //
         $post->delete();
-       return redirect(route('post.index'));
+       return redirect(route('post.index'))->with('message','Usunięto poprawnie post')->with('color','red');
     }
 }
