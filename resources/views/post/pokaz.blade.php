@@ -20,8 +20,8 @@
             <textarea name="tresc" id="tresc" rows="4" placeholder="Wpisz treść posta" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" disabled>{{ $post->tresc }}</textarea>
         </div>
         <div class="mb-2">
-            <div><b>Czas utworzenia:</b> {{ $post->created_at->setTimezone('Europe/Warsaw')->format('j F Y H:i:s') }}</div>
-            <div><b>Czas edycji:</b> {{ $post->updated_at->setTimezone('Europe/Warsaw')->format('j F Y H:i:s') }}</div>
+            <div><b>Czas utworzenia:</b> {{ $post->created_at->setTimezone('Europe/Warsaw')->locale('pl')->translatedFormat('j F Y H:i:s') }}</div>
+            <div><b>Czas edycji:</b> {{ $post->updated_at->setTimezone('Europe/Warsaw')->locale('pl')->translatedFormat('j F Y H:i:s') }}</div>
         </div>
         <div class="flex items-center gap-x-2">
             <a href="{{route('post.index')}}" class="mb-2">
