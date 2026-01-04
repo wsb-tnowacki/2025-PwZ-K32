@@ -6,6 +6,7 @@ use App\Http\Requests\PostStoreRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -20,7 +21,8 @@ class PostController extends Controller
     {
         //
         //$posty = Post::all();
-        $posty = Post::paginate(10);
+        // $posty = Post::paginate(10);
+        $posty = Post::with('user')->paginate(10);
         return view('post.lista', compact('posty'));
     }
 
@@ -51,6 +53,7 @@ class PostController extends Controller
             'email' => 'required|email:dns,rfc|max:200',
             'tresc' => 'required|min:5'
         ]); */
+        $request->merge(['user_id' => Auth::user()->id]);
         Post::create($request->all());
         return redirect(route('post.index'))->with('message','Dodano poprawnie post');
     }
@@ -79,7 +82,10 @@ class PostController extends Controller
     public function update(PostStoreRequest $request, Post $post)
     {
         //
-        $post->update($request->all());
+        //$post->update($request->all());
+        $dane = $request->all();
+        $dane['user_id'] = Auth::user()->id;
+        $post->update($dane);
        return redirect(route('post.index'))->with('message','Zmieniono poprawnie post');
     }
 

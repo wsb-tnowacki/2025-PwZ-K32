@@ -12,19 +12,7 @@
             <div class="text-red-400">{{$message}} </div>
         @enderror
         </div>
-        <div class="mb-2"><label for="autor" class="block text-gray-700 font-bold mb-2">Autor</label>
-            <input type="text" name="autor" id="autor" placeholder="Podaj autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{old('autor')}}" required>
-        @error('autor')
-            <div class="text-red-400">{{$message}} </div>
-        @enderror
-        </div>
-        <div class="mb-2"><label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-            <input type="email" name="email" id="email" placeholder="Podaj email autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{old('email')}}" required>
-        @error('email')
-            <div class="text-red-400">{{$message}} </div>
-        @enderror
-        </div>
-        <div class="mb-2">
+        <div class="mb-2">
             <label for="tresc" class="block text-gray-700 font-bold mb-2">Treść</label>
             <textarea name="tresc" id="tresc" rows="4" placeholder="Wpisz treść posta" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required> {{old('tresc')}} </textarea>
         @error('tresc')
